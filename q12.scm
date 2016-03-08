@@ -4,9 +4,9 @@
 (define (to-binary n)
   (cond
     ((= n 1) 1)
-    ((= n 0) 1)
-    ((= (modulo (floor n) 2) 0) (cons 0 (to-binary (/ (floor n) 2))))
-    (else (cons 1 (to-binary (/ (floor n) 2))))
+    ((= n 0) 0)
+    ((= (modulo (floor n) 2) 0) (cons (to-binary (/ (floor n) 2)) (list 0)))
+    (else (cons (to-binary (/ (floor n) 2)) (list 1)))
   )
 )
 
@@ -14,6 +14,7 @@
 ;(display (to-binary 9))
 ;(newline)
 
+(print (to-binary 4) "\n")  ;100
 (print (to-binary 9) "\n")  ;1001
 (print (to-binary 23) "\n") ;10111
 
